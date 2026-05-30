@@ -156,6 +156,7 @@ public class SignupActivity extends AppCompatActivity {
         String uid = mAuth.getCurrentUser().getUid();
         String name = viewModel.name.getValue();
         String weight = viewModel.weight.getValue();
+        String height = viewModel.height.getValue();
         String gender = viewModel.gender.getValue();
         String goal = viewModel.goal.getValue();
 
@@ -165,6 +166,13 @@ public class SignupActivity extends AppCompatActivity {
                 user.setWeightKg(Double.parseDouble(weight));
             } catch (NumberFormatException e) {
                 user.setWeightKg(0);
+            }
+        }
+        if (height != null && !height.isEmpty()) {
+            try {
+                user.setHeightCm(Double.parseDouble(height));
+            } catch (NumberFormatException e) {
+                user.setHeightCm(0);
             }
         }
         user.setGender(gender != null ? gender : "");

@@ -15,6 +15,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.huzemuscle.R;
 import com.example.huzemuscle.activities.MainActivity;
+import com.example.huzemuscle.utils.BmiCalculator;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.example.huzemuscle.databinding.FragmentProgressBinding;
 import com.example.huzemuscle.viewmodels.FitnessViewModel;
 
@@ -42,6 +45,7 @@ public class ProgressFragment extends Fragment {
         setupStepsTracker();
         setupHydrationTracker();
         setupWeightTracker();
+        setupBmiTool();
     }
 
     private void setupStepsTracker() {
@@ -113,6 +117,51 @@ public class ProgressFragment extends Fragment {
                 } catch (NumberFormatException e) {
                     Toast.makeText(getContext(), "Invalid weight", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+    }
+
+    private void setupBmiTool() {
+        String uid = FirebaseAuth.getInstance().getUid();
+        if (uid != null) {
+            FirebaseDatabase.getInstance().getReference().child("users").child(uid).get()
+                    .addOnSuccessListener(dataSnapshot -> {
+                        if (dataSnapshot.exists() && binding != null) {
+                            Double weight = dataSnapshot.child("weightKg").getValue(Double.class);
+                            Double heightCm = dataSnapshot.child("heightCm").getValue(Double.class);
+                            if (weight != null) binding.etBmiWeight.setText(String.valueOf(weight));
+                            if (heightCm != null) {
+                                double totalInches = heightCm / 2.54;
+                                int feet = (int) (totalInches / 12);
+                                int inches = (int) Math.round(totalInches % 12);
+                                binding.etBmiHeightFt.setText(String.valueOf(feet));
+                                binding.etBmiHeightIn.setText(String.valueOf(inches));
+                            }
+                        }
+                    });
+        }
+
+        binding.btnCalculateBmi.setOnClickListener(v -> {
+            String weightStr = binding.etBmiWeight.getText().toString().trim();
+            String heightFtStr = binding.etBmiHeightFt.getText().toString().trim();
+            String heightInStr = binding.etBmiHeightIn.getText().toString().trim();
+
+            if (!weightStr.isEmpty() && !heightFtStr.isEmpty()) {
+                try {
+                    double weight = Double.parseDouble(weightStr);
+                    double ft = Double.parseDouble(heightFtStr);
+                    double in = heightInStr.isEmpty() ? 0 : Double.parseDouble(heightInStr);
+                    double heightCm = (ft * 12 + in) * 2.54;
+                    
+                    double bmi = BmiCalculator.calculateBmi(weight, heightCm);
+                    String category = BmiCalculator.getBmiCategory(bmi);
+                    
+                    binding.tvBmiResult.setText(String.format(Locale.getDefault(), "BMI: %.1f (%s)", bmi, category));
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getContext(), "Invalid input", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(getContext(), "Please enter both height and weight", Toast.LENGTH_SHORT).show();
             }
         });
     }

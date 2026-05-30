@@ -37,17 +37,33 @@ public class PhysicalInfoStepFragment extends Fragment {
         if (viewModel.weight.getValue() != null && !viewModel.weight.getValue().isEmpty()) {
             binding.etWeight.setText(viewModel.weight.getValue());
         }
+        if (viewModel.height.getValue() != null && !viewModel.height.getValue().isEmpty()) {
+            try {
+                double totalInches = Double.parseDouble(viewModel.height.getValue()) / 2.54;
+                int feet = (int) (totalInches / 12);
+                int inches = (int) Math.round(totalInches % 12);
+                binding.etHeightFt.setText(String.valueOf(feet));
+                binding.etHeightIn.setText(String.valueOf(inches));
+            } catch (Exception ignored) {}
+        }
 
         binding.btnNextPhysical.setOnClickListener(v -> {
             String weight = binding.etWeight.getText() != null ? binding.etWeight.getText().toString().trim() : "";
+            String heightFt = binding.etHeightFt.getText() != null ? binding.etHeightFt.getText().toString().trim() : "";
+            String heightIn = binding.etHeightIn.getText() != null ? binding.etHeightIn.getText().toString().trim() : "0";
             int genderId = binding.rgGender.getCheckedRadioButtonId();
             int goalId = binding.rgGoal.getCheckedRadioButtonId();
 
-            if (!weight.isEmpty() && genderId != -1 && goalId != -1) {
+            if (!weight.isEmpty() && !heightFt.isEmpty() && genderId != -1 && goalId != -1) {
                 String gender = ((RadioButton) view.findViewById(genderId)).getText().toString();
                 String goal = ((RadioButton) view.findViewById(goalId)).getText().toString();
 
+                double ft = Double.parseDouble(heightFt);
+                double in = Double.parseDouble(heightIn.isEmpty() ? "0" : heightIn);
+                double cm = (ft * 12 + in) * 2.54;
+
                 viewModel.weight.setValue(weight);
+                viewModel.height.setValue(String.valueOf(cm));
                 viewModel.gender.setValue(gender);
                 viewModel.goal.setValue(goal);
 

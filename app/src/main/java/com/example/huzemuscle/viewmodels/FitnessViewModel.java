@@ -122,6 +122,7 @@ public class FitnessViewModel extends AndroidViewModel {
         executorService.execute(() -> weightDao.insert(entry));
         if (userId != null) {
             mDatabase.child("users").child(userId).child("weight_history").push().setValue(entry);
+            mDatabase.child("users").child(userId).child("weightKg").setValue((double) weight);
         }
     }
 

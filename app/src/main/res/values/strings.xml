@@ -46,6 +46,9 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="weight_label">Weight (kg)</string>
+    <string name="height_label">Height</string>
+    <string name="height_ft_hint">Feet</string>
+    <string name="height_in_hint">Inches</string>
     <string name="goal_label">Goal</string>
     <string name="lose_weight">Lose Weight</string>
     <string name="bulk_muscle">Bulk / Build Muscle</string>
@@ -95,4 +98,9 @@
     <string name="exercise_plank">Plank</string>
     <string name="exercise_core">Core</string>
     <string name="home_btn_start_workout">Start Live Workout</string>
+
+    <!-- Progress Fragment -->
+    <string name="bmi_tool_title">BMI Calculator Tool</string>
+    <string name="calculate_bmi">Calculate BMI</string>
+    <string name="bmi_result_placeholder">Result will appear here</string>
 </resources>

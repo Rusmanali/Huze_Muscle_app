@@ -227,5 +227,98 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- BMI Calculator Tool Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bmi_tool_title"
+                    android:textColor="@color/secondary_dark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:layout_marginTop="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/height_ft_hint"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBmiHeightFt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:hint="@string/height_in_hint"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBmiHeightIn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="12dp"
+                        android:hint="@string/weight_label"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBmiWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCalculateBmi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/calculate_bmi"
+                    android:backgroundTint="@color/primary_navy"
+                    app:cornerRadius="16dp" />
+
+                <TextView
+                    android:id="@+id/tvBmiResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/bmi_result_placeholder"
+                    android:gravity="center"
+                    android:textColor="@color/primary_red"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

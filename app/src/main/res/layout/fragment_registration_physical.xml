@@ -68,6 +68,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
+            android:text="@string/height_label"
+            android:textColor="@color/text_secondary_grey"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:letterSpacing="0.05"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etHeightFt"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_text"
+                android:backgroundTint="@color/bg_field"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/primary_navy"
+                android:hint="@string/height_ft_hint"
+                android:textSize="18sp"
+                android:autofillHints="none" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="0dp" />
+
+            <EditText
+                android:id="@+id/etHeightIn"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edit_text"
+                android:backgroundTint="@color/bg_field"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/primary_navy"
+                android:hint="@string/height_in_hint"
+                android:textSize="18sp"
+                android:autofillHints="none" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:text="@string/goal_label"
             android:textColor="@color/text_secondary_grey"
             android:textStyle="bold"
