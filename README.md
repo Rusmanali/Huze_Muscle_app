@@ -13,6 +13,41 @@ Huze Muscle is a comprehensive Android application designed to help users track 
 *   **Local Persistence**: High-performance local storage using Room Database for offline access.
 *   **Smart Reminders**: Automated notifications to keep you motivated and hydrated.
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td align="center"><b>Splash</b></td>
+    <td align="center"><b>Welcome</b></td>
+    <td align="center"><b>Sign In</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/splash.png" width="200"/></td>
+    <td><img src="screenshots/welcome.png" width="200"/></td>
+    <td><img src="screenshots/signin.png" width="200"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Sign Up</b></td>
+    <td align="center"><b>Home</b></td>
+    <td align="center"><b>Progress</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/signup.png" width="200"/></td>
+    <td><img src="screenshots/home.png" width="200"/></td>
+    <td><img src="screenshots/progress.png" width="200"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Exercise</b></td>
+    <td align="center"><b>Timer</b></td>
+    <td align="center"><b>Profile</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/exercise.png" width="200"/></td>
+    <td><img src="screenshots/timer.png" width="200"/></td>
+    <td><img src="screenshots/profile.png" width="200"/></td>
+  </tr>
+</table>
+
 ## 🛠 Tech Stack
 
 *   **Language**: Java / Kotlin
