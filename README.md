@@ -26,8 +26,8 @@ Huze Muscle is a comprehensive Android application designed to help users track 
   <tr>
     <td><img src="splash.png" width="200"/></td>
     <td><img src="welcome.png" width="200"/></td>
-    <td><img src="signin.png" width="200"/></td>
-    <td><img src="signup.png" width="200"/></td>
+    <td><img src="sign in.png" width="200"/></td>
+    <td><img src="sign up.png" width="200"/></td>
     <td><img src="home.png" width="200"/></td>
   </tr>
   <tr>
