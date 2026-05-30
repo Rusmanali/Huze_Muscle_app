@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tell_us_more"
+            android:textColor="@color/primary_navy"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/gender_label"
+            android:textColor="@color/text_secondary_grey"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:letterSpacing="0.05"/>
+
+        <RadioGroup
+            android:id="@+id/rgGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+            <RadioButton android:id="@+id/rbMale" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:text="@string/male" android:textColor="@color/primary_navy" android:buttonTint="@color/primary_red" android:textSize="16sp" />
+            <RadioButton android:id="@+id/rbFemale" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:text="@string/female" android:textColor="@color/primary_navy" android:buttonTint="@color/primary_red" android:textSize="16sp" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/weight_label"
+            android:textColor="@color/text_secondary_grey"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:letterSpacing="0.05"/>
+
+        <EditText
+            android:id="@+id/etWeight"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_edit_text"
+            android:backgroundTint="@color/bg_field"
+            android:inputType="numberDecimal"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_navy"
+            android:hint="@string/weight_hint"
+            android:textSize="18sp"
+            android:autofillHints="none" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/goal_label"
+            android:textColor="@color/text_secondary_grey"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:letterSpacing="0.05"/>
+
+        <RadioGroup
+            android:id="@+id/rgGoal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp">
+            <RadioButton android:id="@+id/rbLose" android:layout_width="match_parent" android:layout_height="56dp" android:text="@string/lose_weight" android:textColor="@color/primary_navy" android:buttonTint="@color/primary_red" android:textSize="16sp" />
+            <RadioButton android:id="@+id/rbBulk" android:layout_width="match_parent" android:layout_height="56dp" android:text="@string/bulk_muscle" android:textColor="@color/primary_navy" android:buttonTint="@color/primary_red" android:textSize="16sp" />
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNextPhysical"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/next_btn"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/primary_red"
+            app:cornerRadius="32dp"
+            app:elevation="8dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ========================= -->
+    <!-- HUZE MUSCLE LOGO-INSPIRED PALETTE -->
+    <!-- ========================= -->
+
+    <!-- Flag & Muscle Reds -->
+    <color name="primary_red">#C8102E</color> <!-- British/US Flag Red & Muscle Base -->
+    <color name="primary_dark_red">#8B0000</color>
+    <color name="muscle_highlight">#FF4D4D</color>
+    <color name="muscle_shadow">#8B0000</color>
+
+    <!-- Flag Blues (Deep & Powerful) -->
+    <color name="primary_navy">#012169</color> <!-- UK Royal Blue -->
+    <color name="flag_blue_us">#3C3B6E</color> <!-- US Old Glory Blue -->
+
+    <!-- Neutral / Bone / Tendon -->
+    <color name="bone_white">#F5F5F0</color>
+    <color name="tendon_silver">#E5E4E2</color>
+
+    <!-- Backgrounds (Premium Dark) -->
+    <color name="bg_dark">#0A0E14</color>
+    <color name="bg_splash">#12152b</color>
+    <color name="bg_surface">#121820</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_field">#F0F2F5</color>
+
+    <!-- Text -->
+    <color name="white">#FFFFFF</color>
+    <color name="text_primary_dark">#012169</color>
+    <color name="text_secondary_grey">#607D8B</color>
+
+    <!-- Utility -->
+    <color name="divider">#E0E0E0</color>
+    <color name="accent_gold">#D4AF37</color> <!-- For premium highlights -->
+    <color name="accent_orange">#FF7043</color>
+    <color name="black">#000000</color>
+
+    <!-- Compatibility -->
+    <color name="light_grey">#F5F5F5</color>
+    <color name="grey_text">#607D8B</color>
+    <color name="secondary_dark">#012169</color>
+    <color name="text_grey">#607D8B</color>
+
+</resources>
